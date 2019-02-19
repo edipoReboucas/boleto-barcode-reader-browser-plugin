@@ -1,2 +1,3 @@
-# boleto-barcode-reader-browser-plugin
-Plugin para leitura de código de barras de boletos.
+# LeitorBoleto
+
+Extensão para navegador que funciona como leitor de código de barras para boletos.

@@ -1,0 +1,41 @@
+{
+  "name": "LeitorBoleto",
+  "version": "0.1.0",
+  "description": "Leitor de Código de Barras para Boletos",
+  "permissions": [
+    "clipboardWrite",
+    "activeTab",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": [
+      "libs/javascript-barcode-reader.min.js",
+      "modules/events.js",
+      "modules/barcode.js",
+      "scripts/background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "Ler Código de Barras"
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "modules/events.js",
+        "modules/barcode.js",
+        "modules/barcode-reader-ui-componet.js",
+        "scripts/content.js"
+      ]
+    }
+  ],
+  "manifest_version": 2
+}
