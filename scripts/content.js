@@ -1,12 +1,19 @@
-const barcodeReader = new BarcodeReaderUIComponent();
+var contentScriptAlreadyLoaded;
 
-onStartBarcodeReader(() => {
-  barcodeReader.toogle();
-});
+if (!contentScriptAlreadyLoaded) {
 
+  var barcodeReader = new BarcodeReaderUIComponent();
 
-onCancelBarcodeReader(() => {
-  if (barcodeReader.isStarted()) {
-    barcodeReader.destroy();
-  }
-})
+  onStartBarcodeReader(() => {
+    barcodeReader.toogle();
+  });
+  
+  
+  onCancelBarcodeReader(() => {
+    if (barcodeReader.isStarted()) {
+      barcodeReader.destroy();
+    }
+  });
+}
+
+contentScriptAlreadyLoaded = true;
