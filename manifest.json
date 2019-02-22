@@ -1,11 +1,10 @@
 {
   "name": "LeitorBoleto",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Leitor de Código de Barras para Boletos",
   "permissions": [
     "clipboardWrite",
-    "activeTab",
-    "<all_urls>"
+    "activeTab"
   ],
   "background": {
     "scripts": [
@@ -24,18 +23,6 @@
     "48": "images/icon48.png",
     "128": "images/icon128.png"
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "modules/events.js",
-        "modules/barcode.js",
-        "modules/barcode-reader-ui-componet.js",
-        "scripts/content.js"
-      ]
-    }
-  ],
+
   "manifest_version": 2
 }
